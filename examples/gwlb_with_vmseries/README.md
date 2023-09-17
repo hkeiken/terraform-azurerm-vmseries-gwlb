@@ -8,16 +8,16 @@ This is a fork of https://github.com/PaloAltoNetworks/terraform-azurerm-vmseries
 
 * Checkout the code locally and switch to examples/gwlb_with_vmseries directory
 
-     git clone X
-     cd X
+     git clone https://github.com/hkeiken/terraform-azurerm-vmseries-gwlb/
+     cd terraform-azurerm-vmseries-gwlb/examples/gwlb_with_vmseries/
 
-* Copy `example.tfvars` to `terraform.tfvars` and adjust it to your needs.
+* Copy `example.tfvars` to `terraform.tfvars` and adjust it to your needs. Changes are typically in the 'name_prefix' and bootstrap_storages.bootstrap.name
 
-     cp example.tfvard terraform.tfvars
+     cp example.tfvars terraform.tfvars
 
 * Copy `files/init-cfg.txt.sample` to `files/init-cfg.txt` and fill it in with required bootstrap parameters (see this [documentation](https://docs.paloaltonetworks.com/vm-series/10-2/vm-series-deployment/bootstrap-the-vm-series-firewall/create-the-init-cfgtxt-file/init-cfgtxt-file-components) for details).
 
-     cp files/init-cfg.txt.sample files/init-cfg.txt
+     cp files/init-cfg.sample.txt files/init-cfg.txt
 
 * Authenticate to AzureRM, switch to the Subscription of your choice if necessary.
 
@@ -28,12 +28,9 @@ This is a fork of https://github.com/PaloAltoNetworks/terraform-azurerm-vmseries
       terraform init
 
 * (optional) Plan you infrastructure to see what will be actually deployed:
+* Deploy the infrastructure (you have to approve with "yes"):
 
-      terraform plan -out planfile
-
-* Deploy the infrastructure:
-
-      terraform apply planfile
+      terraform apply
 
 * At this stage you have to wait a few minutes for the firewalls to bootstrap.
 

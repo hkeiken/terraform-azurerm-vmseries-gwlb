@@ -1,5 +1,6 @@
 # Common
 name_prefix         = "example-"
+bootstrap_name      = "vmseriesgwlbboostrap"
 location            = "East US"
 resource_group_name = "vmseries-gwlb"
 tags = {
@@ -131,7 +132,8 @@ gateway_load_balancers = {
 # VMseries
 bootstrap_storages = {
   bootstrap = {
-    name        = "vmseriesgwlbboostrap"
+    name        = "${var.bootstrap_name}
+    /*
     storage_acl = true
     storage_allow_vnet_subnets = {
       management = {
@@ -139,6 +141,7 @@ bootstrap_storages = {
         subnet_key = "mgmt"
       }
     }
+    */
   }
 }
 
