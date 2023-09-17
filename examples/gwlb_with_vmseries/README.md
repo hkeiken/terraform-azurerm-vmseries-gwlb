@@ -11,7 +11,7 @@ This is a fork of https://github.com/PaloAltoNetworks/terraform-azurerm-vmseries
      git clone https://github.com/hkeiken/terraform-azurerm-vmseries-gwlb/
      cd terraform-azurerm-vmseries-gwlb/examples/gwlb_with_vmseries/
 
-* Copy `example.tfvars` to `terraform.tfvars` and adjust it to your needs. Changes are typically in the 'name_prefix' and bootstrap_storages.bootstrap.name
+* Copy `example.tfvars` to `terraform.tfvars` and adjust it to your needs. Changes are typically in the 'name_prefix' and 'bootstrap_name'
 
      cp example.tfvars terraform.tfvars
 

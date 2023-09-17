@@ -132,7 +132,7 @@ gateway_load_balancers = {
 # VMseries
 bootstrap_storages = {
   bootstrap = {
-    name        = "${var.bootstrap_name}
+    name        = "vmseriesgwlbboostrap"
     /*
     storage_acl = true
     storage_allow_vnet_subnets = {
