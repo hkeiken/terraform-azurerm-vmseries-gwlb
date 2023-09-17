@@ -242,9 +242,12 @@ appvms_common = {
 #!/bin/sh
 until [ -f /var/www/html/index.html ]
 do
-    apt-get update
-    apt-get install -y micro-httpd
-    echo "Backend VM is $(hostname)" > /var/www/html/index.html
+#!/bin/sh
+  sudo apt-get update
+  sudo apt-get install -y nginx
+  sudo systemctl start nginx
+  sudo systemctl enable nginx
+  echo "Backend VM is $(hostname)" | sudo tee /var/www/html/index.html
 done
     echo "File found"
 exit
